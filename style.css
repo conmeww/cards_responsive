@@ -114,7 +114,9 @@ a[href^="tel"] {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 10;
   width: 40%;
 }
@@ -140,9 +142,14 @@ a[href^="tel"] {
   margin-bottom: 30px;
 }
 .cards__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .card {
   width: 360px;
@@ -182,6 +189,8 @@ a.btn--card {
   position: absolute;
   left: 0;
   top: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 6px 16px;
 }
@@ -191,16 +200,13 @@ a.btn--card {
 .card__label--blue-dark {
   background: var(--color-dark-blue);
 }
-@media only screen and (min-width: 1920px) {
+@media only screen and (max-width: 1920px) {
   .header {
     margin-bottom: 60px;
   }
   .wrapper {
     padding-left: 25px;
     padding-right: 25px;
-  }
-  .card {
-    flex-basis: 100%;
   }
 }
 
@@ -215,7 +221,8 @@ a.btn--card {
     padding-right: 16px;
   }
   .card {
-    flex-basis: 48%;
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
     height: 100%;
   }
   a.btn--card {
@@ -231,7 +238,8 @@ a.btn--card {
     font-size: 14px;
   }
   .card {
-    flex-basis: 48%;
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
     height: 100%;
   }
   .header__wrapper h1 {
@@ -245,10 +253,6 @@ a.btn--card {
   h4 {
     font-size: 18px;
   }
-   .wrapper {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 }
 /* 992px - 768px */
 @media only screen and (max-width: 768px) {
@@ -260,7 +264,8 @@ a.btn--card {
     padding-right: 15px;
   }
   .card {
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
   .header__wrapper h1 {
     width: 70%;
@@ -277,6 +282,7 @@ a.btn--card {
     padding-right: 25px;
   }
   .card {
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 }
